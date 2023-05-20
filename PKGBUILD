@@ -1,4 +1,5 @@
 # Maintainer: Christian Hesse <mail@eworm.de>
+# Maintainer: T.J. Townsend <blakkheim@archlinux.org>
 
 pkgname=rsync
 _tag='b13e7a8ef4fa430223f66403506fb821caae5cfd' # git rev-parse v${pkgver}
