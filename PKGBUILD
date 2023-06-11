@@ -28,7 +28,7 @@ _reverts=(
 )
 
 prepare() {
-  cd "$srcdir/rsync"
+  cd ${pkgname}
 
   local _c
   for _c in "${_backports[@]}"; do
@@ -46,7 +46,7 @@ prepare() {
 }
 
 build() {
-  cd "$srcdir/rsync"
+  cd ${pkgname}
 
   ./configure \
     --prefix=/usr \
@@ -58,13 +58,13 @@ build() {
 }
 
 check() {
-  cd "$srcdir/rsync"
+  cd ${pkgname}
 
   make test
 }
 
 package() {
-  cd "$srcdir/rsync"
+  cd ${pkgname}
 
   make DESTDIR="$pkgdir" install
   install -Dm0644 ../rsyncd.conf "$pkgdir/etc/rsyncd.conf"
